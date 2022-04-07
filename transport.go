@@ -8,7 +8,7 @@ type Transport interface {
 	// Send gets a channel on which messages with the specified name may be sent.
 	Send(name string) chan<- []byte
 	// ErrChan gets a channel through which errors are sent
-	ErrChan() <-chan []byte
+	ErrChan() <-chan error
 	// Stop stops the transport. This will also close the channel returned by
 	// Done method.
 	Stop()
